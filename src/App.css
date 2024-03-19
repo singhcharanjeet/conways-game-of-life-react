@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.cell {
+  width: 25px;
+  height: 25px;
+  border: 1px solid white;
+}
+
+.active {
+  background-color: rgb(238, 143, 0);
+}
+
+button {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+button.start {
+  background-color: rgb(136, 97, 0);
+}
+
+button.stop {
+  background-color: red;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-button-group {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.reset-button {
+  background-color: rgb(21, 152, 223);
+}
+
+.generate-button {
+  background-color: rgb(29, 138, 10);
+}
