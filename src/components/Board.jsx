@@ -10,8 +10,8 @@ import {
 
 function Board() {
   const UPDATE_SPEED = 200; // Speed in milliseconds by which the pattern is updated
-  const COLUMNS = 30; // Number of columns the generated board should have
-  const ROWS = 30; // Number of rows the generated board should have
+  const COLUMNS = 25; // Number of columns the generated board should have
+  const ROWS = 25; // Number of rows the generated board should have
 
   const [grid, setGrid] = useState(createEmptyGrid(COLUMNS, ROWS));
 
@@ -67,7 +67,7 @@ function Board() {
   }
 
   return (
-    <>
+    <div className="grid">
       <div className="grid-button-group">
         <button
           className={isSimulating ? "stop" : "start"}
@@ -109,7 +109,7 @@ function Board() {
           ))
         )}
       </div>
-    </>
+    </div>
   );
 }
 

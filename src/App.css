@@ -72,6 +72,7 @@ button.stop {
 
 .grid {
   display: grid;
+  place-items: center;
 }
 
 .grid-button-group {
