@@ -88,3 +88,42 @@ button.stop {
 .generate-button {
   background-color: rgb(29, 138, 10);
 }
+
+.flex {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heart {
+  --_size: 300px;
+  --color: rgb(188, 38, 153);
+  height: var(--_size);
+  width: var(--_size);
+  background-color: var(--color);
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.heart::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  height: var(--_size);
+  width: var(--_size);
+  background-color: var(--color);
+  top: -50%;
+  border-radius: 50%;
+}
+
+.heart::after {
+  content: "";
+  position: absolute;
+  height: var(--_size);
+  width: var(--_size);
+  background-color: var(--color);
+  right: -50%;
+  border-radius: 50%;
+}
