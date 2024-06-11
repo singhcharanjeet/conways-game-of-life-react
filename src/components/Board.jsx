@@ -8,12 +8,18 @@ import {
   generateRandomGrid,
 } from "../utils/helpers";
 
-function Board() {
-  const UPDATE_SPEED = 200; // Speed in milliseconds by which the pattern is updated
-  const COLUMNS = 25; // Number of columns the generated board should have
-  const ROWS = 25; // Number of rows the generated board should have
+const UPDATE_SPEED = 200; // Speed in milliseconds by which the pattern is updated
+const COLUMNS = 25; // Number of columns the generated board should have
+const ROWS = 25; // Number of rows the generated board should have
 
+function Board() {
   const [grid, setGrid] = useState(createEmptyGrid(COLUMNS, ROWS));
+  const [isSimulating, setIsSimulating] = useState(false);
+
+  const simulationRef = useRef(isSimulating);
+  simulationRef.current = isSimulating;
+
+  const intervalRef = useRef(null);
 
   function handleCellClick(columnIndex, rowIndex) {
     setGrid((previousGrid) => {
@@ -31,12 +37,6 @@ function Board() {
     setGrid(createEmptyGrid(COLUMNS, ROWS));
     clearInterval(intervalRef.current);
   }
-
-  const [isSimulating, setIsSimulating] = useState(false);
-  const simulationRef = useRef(isSimulating);
-  simulationRef.current = isSimulating;
-
-  const intervalRef = useRef(null);
 
   function updateGrid() {
     setGrid((previousGrid) => {
@@ -93,10 +93,7 @@ function Board() {
           Generate random grid
         </button>
       </div>
-      <div
-        className="grid"
-        style={{ gridTemplateColumns: `repeat(${COLUMNS}, 25px)` }}
-      >
+      <div className="grid" style={{ gridTemplateColumns: `repeat(${COLUMNS}, 25px)` }}>
         {grid.map((columns, columnIndex) =>
           columns.map((row, rowIndex) => (
             <Cell
